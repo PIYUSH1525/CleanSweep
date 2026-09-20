@@ -1,0 +1,8 @@
+{
+  "trigger_words": [
+    "good morning", "shubh prabhat", "blessings", "diwali", 
+    "happy new year", "good night", "शुभ", "प्रभात", "सुप्रभात"
+  ],
+  "languages": ["en", "hi"],
+  "scan_directory": "./sample_data"
+}

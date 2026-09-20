@@ -13,21 +13,23 @@ def load_config(config_path="config.json"):
         return None
 
 def get_image_files(directory):
-    """Scans the directory for image files (jpg, jpeg, png, webp)."""
+    """Scans the directory for image files and removes duplicates."""
     dir_path = Path(directory)
     if not dir_path.exists():
         print(f"Directory {directory} does not exist.")
         return []
     
-    # We use rglob to search recursively in all subfolders
     extensions = ['*.jpg', '*.jpeg', '*.png', '*.webp']
-    images = []
+    images = set() # Using a Set automatically removes duplicates!
+    
     for ext in extensions:
-        images.extend(dir_path.rglob(ext))
-        # Add uppercase variants for Windows safety (e.g., .JPG)
-        images.extend(dir_path.rglob(ext.upper())) 
+        # We convert to absolute paths (.resolve()) to ensure the Set catches them
+        for p in dir_path.rglob(ext):
+            images.add(p.resolve())
+        for p in dir_path.rglob(ext.upper()):
+            images.add(p.resolve())
         
-    return images
+    return list(images)
 
 def safe_delete(file_path):
     """Moves the file to the Windows Recycle Bin instead of permanent deletion."""
