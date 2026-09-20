@@ -5,7 +5,7 @@
 ![AI](https://img.shields.io/badge/AI-OCR%20%2B%20CLIP-6C47FF)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows&logoColor=white)
 
-A local Streamlit application for finding and safely cleaning greeting cards, quote images, and other unwanted WhatsApp media. It combines OCR text detection with a vision AI fallback, then lets you review the results before moving selected files to the Windows Recycle Bin.
+A local Streamlit application for finding and safely cleaning greeting cards, quote images, and other unwanted Social-media. It combines OCR text detection with a vision AI fallback, then lets you review the results before moving selected files to the Windows Recycle Bin.
 
 ## Visual Workflow
 
